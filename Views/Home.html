@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!--BEGIN SCRIPTS-->
+  <script src="..\Controllers/Products.js"></script>
+  <script src="..\Controllers/Shopping_Cart.js"></script>
+  <script src="..\Controllers/Utils.js"></script>
+  <script src="..\Controllers/Data_Handler.js"></script>
+  <script src="..\Controllers/Index.js"></script>
+  <title>Eden</title>
+  <link rel="icon" type="image/png" href="..\Images\cherry-blossom.png">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/4167f19ec8.js" crossorigin="anonymous"></script>
+
+  <!-- Bootstrap CSS v5.2.1 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+    <!--BEGIN LOGIN MODAL-->
+    <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="loginModalLabel">LogIn</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <!-- USERNAME -->
+                <div class="mb-3">
+                  <label for="username" class="form-label">Email</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-solid fa-envelope"></i></span>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter your email" required>
+                  </div>
+                </div>
+  
+                <!-- PASSWORD -->
+                <div class="mb-3">
+                  <label for="password" class="form-label">Password</label>
+                  <div class="input-group">
+                    <span class="input-group-text"><i class="fa-solid fa-lock"></i></span>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter your password" required>
+                  </div>
+                </div>
+              </form>
+              <div style="text-align: center;"> 
+              <button type="submit" class="btn" style="font-family: fantasy; border-color: #ff903d; color: #ff903d;">Login</button>
+              </div>
+            </div>
+            <div style= "text-align: center;" div="modal-footer">
+              <p style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">You don't have an account?</p> 
+              <a href="#" data-bs-toggle="modal" data-bs-target="#registrationModal" style="color: #fd88b6; font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Register here</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--END LOGIN MODAL-->
+      <!--BEGIN REGISTRATION MODAL-->
+      <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id = "registrationModalLabel">Register</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="container">
+                <div class="row">
+                  <div class="col-6">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                  </div>
+                  <div class="col-6">
+                    <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Last Name" required>
+                    <br>
+                  </div>
+                </div>
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+              </div>
+              <div class="mb-3">
+                <input type="password" class="form-control" id="confirmpassword" name="confirmpassword" placeholder="Confirm Password" required>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" class="btn" style="font-family: fantasy; border-color: #ff903d; color: #ff903d;">Register</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!--END REGISTRATION MODAL-->
+</head>
+
+<body>
+  <header>
+    <!-- INICIO NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container-fluid justify-content-between">
+            <a class="navbar-brand titleFam" href="..\Views\Home.html"><i class="fa-solid fa-heart" style="color: #e7c6ba;"></i></a>
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="collapsibleNavId">
+                <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="..\Views\Home.html" aria-current="page">Home<span
+                                class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="P01_about_us.html">About us</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Product</a>
+                        <div class="dropdown-menu" aria-labelledby="dropdownId">
+                            <a class="dropdown-item" href="P01_cat_A.html" style="font-family: fantasy;">Dresses</a>
+                            <a class="dropdown-item" href="P01_cat_B.html" style="font-family: fantasy;">Tops</a>
+                        </div>
+                    </li>
+
+                    <form class="d-flex my-2 my-lg-0">
+                        <input class="form-control me-sm-2" type="text" placeholder="Search">
+                        <button id="boton-custom" class="btn" type="submit" style="font-family: fantasy; border-color: #e7c6ba; color: #e7c6ba;">Search</button>
+                    </form>
+                </ul>
+
+                <div class="Contenedor">
+                    <ul class="navbar-nav me-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" role="button" data-bs-toggle="modal" data-bs-target="#loginModal"><i class="fa-solid fa-user"
+                                    style="color: #e7c6ba;"></i> &nbsp;User</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="P01_cart.html"><i class="fa-solid fa-cart-shopping"
+                                    style="color: #e7c6ba;"></i></a> 
+                        </li>
+                        <li class="nav-item dropdown">
+                          <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown"
+                              aria-haspopup="true" aria-expanded="false">Shipping</a>
+                          <div class="dropdown-menu" aria-labelledby="dropdownId">
+                              <a class="dropdown-item" href="P01_orders.html" style="font-family: fantasy;">Track</a>
+                          </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </nav>
+    <!-- END NAVBAR -->
+  </header>
+
+  <main>
+    <!-- BEGIN CAROUSEL -->
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#demo" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#demo" data-bs-slide-to="1"></li>
+            <li data-bs-target="#demo" data-bs-slide-to="2"></li>
+        </ol>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="..\Images\Carousel_1.jpeg" alt="slide1" class="d-block w-100 ">
+            </div>
+            <div class="carousel-item">
+                <img src="..\Images\Carousel_2.jpeg" alt="slide2" class="d-block w-100 ">
+            </div>
+            <div class="carousel-item">
+                <img src="..\Images\Carousel_3.jpeg" alt="slide3" class="d-block w-100 ">
+            </div>
+        </div>
+
+        <a class="carousel-control-prev" href="#demo" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#demo" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+    <!-- END CAROUSEL -->
+
+    
+        <!-- BEGIN CARDS -->
+        <div class="container mt-5">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+                <!-- Tarjeta 1 -->
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="..\Images\Card_1.jpeg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title" style="font-family:fantasy;">Amelia Dress</h5>
+                            <p class="card-text">Summer Collection</p>
+                            <button type="button" class="btn btn-primary" style="font-family: fantasy; background-color: white; border-color: #ff903d; color: #ff903d;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 2 -->
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="..\Images\Card_2.jpeg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Rhae Sweater</h5>
+                            <p class="card-text">Winter Collection</p>
+                            <button type="button" class="btn btn-primary" style="font-family: fantasy; background-color: white; border-color: #ff903d; color: #ff903d;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 3 -->
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="..\Images\Card_3.jpeg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Lia Sweater</h5>
+                            <p class="card-text">Winter Collection</p>
+                            <button type="button" class="btn btn-primary" style="font-family: fantasy; background-color: white; border-color: #ff903d; color: #ff903d;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 4 -->
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="..\Images\Card_4.jpeg" class="card-img-top" alt="Producto 8">
+                        <div class="card-body">
+                            <h5 class="card-title">Kate Heels</h5>
+                            <p class="card-text">Autum Collection</p>
+                            <button type="button" class="btn btn-primary" style="font-family: fantasy; background-color: white; border-color: #ff903d; color: #ff903d;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 5 -->
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="..\Images\Card_5.jpeg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Cleo Necklace</h5>
+                            <p class="card-text">Spring Collection</p>
+                            <button type="button" class="btn btn-primary" style="font-family: fantasy; background-color: white; border-color: #ff903d; color: #ff903d;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 6 -->
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="..\Images\Card_6.jpeg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Holli Cardigan</h5>
+                            <p class="card-text">Winter Collection</p>
+                            <button type="button" class="btn btn-primary" style="font-family: fantasy; background-color: white; border-color: #ff903d; color: #ff903d;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 7 -->
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="..\Images\Card_7.jpeg" class="card-img-top" alt="Producto 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Daisy Pants</h5>
+                            <p class="card-text">Spring Collection</p>
+                            <button type="button" class="btn btn-primary" style="font-family: fantasy; background-color: white; border-color: #ff903d; color: #ff903d;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tarjeta 8 -->
+                <div class="col">
+                    <div class="card mb-4">
+                        <img src="..\Images\Card_8.jpeg" class="card-img-top" alt="Producto 8">
+                        <div class="card-body">
+                            <h5 class="card-title">Ophelia Dress</h5>
+                            <p class="card-text">Summer Collection</p>
+                            <button type="button" class="btn btn-primary" style="font-family: fantasy; background-color: white; border-color: #ff903d; color: #ff903d;">Buy Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <!-- END CARDS -->
+  </main>
+
+  <footer>
+    <!-- BEGIN PAGINATION -->
+    <div class="pagination-container">
+        <nav aria-label="Page navigation example">
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#"><<</a></li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item"><a class="page-link" href="#">>></a></li>
+            </ul>
+        </nav>
+    </div>
+    <!-- BEGIN PAGINATION -->
+  </footer>
+  <!-- Bootstrap JavaScript Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+    integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz" crossorigin="anonymous">
+  </script>
+</body>
+</html>
