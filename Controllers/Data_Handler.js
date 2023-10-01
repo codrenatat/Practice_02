@@ -1,4 +1,4 @@
-let products = [Amelia_Dress, Rhae_Sweater,Lia_Sweater, Lia_Sweater, Kate_Heels, Cleo_Necklace, Holli_Cardigan, Daisy_Pants, Ophelia_Dress];
+let products = [];
 
 function getProducts(){
     return products;
@@ -12,12 +12,22 @@ function createProduct(prduct){
     products.push(prduct);
     return prduct;
 }
+function updateProduct(uuid, updatedProduct) {
+    const index = products.findIndex(product => product.uuid === uuid);
+    if (index !== -1) {
+      products[index] = updatedProduct;
+      return updatedProduct;
+    }
+    return null;
+}  
 
-function updateProduct(uuid, updateProduct){
-    const index = products.findIndex(products => products.uuid === uuid);
-    if(index !== -1){
-        const deletedProduct = products.splice(index, 1);
-        return deletedProduct[0];
+function deleteProduct(uuid) {
+    const index = products.findIndex(product => product.uuid === uuid);
+    if (index !== -1) {
+      const deletedProduct = products.splice(index, 1);
+      return deletedProduct[0];
     }
     return null;
 }
+  
+
