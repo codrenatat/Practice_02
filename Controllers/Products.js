@@ -163,6 +163,6 @@ class Product {
 
 }
 
-let stringProduct = '{"title": "Hola", "description":"Hola", "imageUrl": "hello", "unit": "Uno", "stock": 1, "pricePerUnit": 1, "category": "Hola"}';
-console.log(Product.createFromJSON(stringProduct));
+//let stringProduct = '{"title": "Hola", "description":"Hola", "imageUrl": "hello", "unit": "Uno", "stock": 1, "pricePerUnit": 1, "category": "Hola"}';
+//console.log(Product.createFromJSON(stringProduct));
 
