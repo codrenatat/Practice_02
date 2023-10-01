@@ -1,0 +1,87 @@
+.pagination-container{
+    display: flex;
+    justify-content: center
+}
+
+.card-title{
+    font-family: fantasy;
+    text-align: center;
+    color: #ff903d;
+}
+
+.pagination-container .page-item .page-link {
+        color: white;
+        background-color: #fd88b6;
+}
+
+.card-text{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #fd88b6;
+}
+
+
+
+.navbar-custom .navbar-nav .nav-link {
+    font-family: fantasy;
+}
+
+.navbar-custom .navbar-nav .nav-link[href="P01_index.html"],
+.navbar-custom .navbar-nav .nav-link[type="submit"] {
+        font-family: fantasy;
+}
+
+h5{
+    font-family: fantasy;
+    color: #ff903d;
+}
+
+.form-label{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fd88b6;
+}
+
+h4{
+    font-family: fantasy;
+    color: #ff903d;
+}
+
+h3{
+    font-family: fantasy;
+    color: #ff903d;
+}
+
+b{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #fd88b6;
+}
+
+h2{
+    font-family: fantasy;
+    text-align: center;
+    color: #fd88b6;
+}
+
+h1{
+    font-family: fantasy;
+    text-align: center;
+    color: #fd88b6;
+}
+
+p{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.about-us-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
