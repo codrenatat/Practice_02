@@ -4,7 +4,7 @@ function getProducts() {
   return products;
 }
 
-function getProductById(uuid) {
+function getProductById(products, uuid) {
   return products.find(product => product.uuid === uuid);
 }
 

@@ -37,14 +37,16 @@ class ShoppingCart {
       }
   }
 
-  CalculateTotal(){
+  CalculateTotal() {
     let total = 0;
-    for (let proxy of this._proxies){
-        let product = getProductById(proxy.productUuid);
+    for (let proxy of this._proxies) {
+      let product = getProductById(this._products, proxy.productUuid);
+      if (product) {
         total += proxy.amount * product.pricePerUnit;
+      }
     }
     return total;
-}
+  }
 }
 
 class ProductProxy {
