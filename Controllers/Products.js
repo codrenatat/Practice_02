@@ -16,13 +16,13 @@ function generateUUID() {
 class Product {
     constructor(title, description, imageUrl, unit, stock, pricePerUnit, category) {
         this._uuid = generateUUID();
-        this.title = title;
-        this.description = description;
-        this.imageUrl = imageUrl;
-        this.unit = unit;
-        this.stock = stock;
-        this.pricePerUnit = pricePerUnit;
-        this.category = category;
+        this._title = title;
+        this._description = description;
+        this._imageUrl = imageUrl;
+        this._unit = unit;
+        this._stock = stock;
+        this._pricePerUnit = pricePerUnit;
+        this._category = category;
     }
 
     // GETTERS
